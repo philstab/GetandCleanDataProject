@@ -82,3 +82,10 @@ actlabel <- read_fwf("./GetandCleanData/project/UCI HAR Dataset/activity_labels.
 all <- left_join(all, actlabel, by = "activity") %>% 
        select(subject, selection, activity, activityDescription, everything())
 
+#"creates a second, independent tidy data set with the average of each variable for each activity and each subject."
+meancol <- colnames(all)[5:70]
+
+sumall <- all %>% group_by(subject, activity, activityDescription) %>% summarise_at(mean, .vars = meancol ) 
+
+colnames(sumall)[4:69] <- paste0(meancol, "_mean")
+
