@@ -1,6 +1,6 @@
-#Get and Clean Data Project
+# Get and Clean Data Project
 
-##Background
+## Background
 This is a course project for the JHU Data Science Specialization
 
 Archived original data and codebooks located here http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -15,7 +15,7 @@ The instructions for this project are to:
 >4. Appropriately labels the data set with descriptive variable names.
 >5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-##Script Explanation
+## Script Explanation
 The first section of the run_analysis.R script loads the libraries used, and downloads the files. The download lines are commented out, but preserved for reproducability.
 
 The next section reads in the features.txt file, because I wanted to use this for the `col_names = ` argument to `read_fwf` function, for easier naming of columns. V1, V2, V3... or X1, X2, X3... are the default names, but naming columns on import seemed easier to me. The following code sections use the `readr::read_fwf` from `tidyverse` to read in each flat file. features.txt needed to be split with `strsplit()` and `sapply()` as `read_fwf()` did not recognize the row numbering as it's own column.
