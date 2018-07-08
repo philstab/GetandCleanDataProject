@@ -1,5 +1,4 @@
 library(tidyverse)
-library(lubridate)
 
 dataurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
@@ -89,4 +88,13 @@ meancol <- colnames(all)[5:70]
 sumall <- all %>% group_by(subject, activity, activityDescription) %>% summarise_at(mean, .vars = meancol ) 
 
 colnames(sumall)[4:69] <- paste0(meancol, "_mean")
+
+#nicer column names
+names(sumall)<-gsub("^t", "time", names(sumall))
+names(sumall)<-gsub("^f", "frequency", names(sumall))
+names(sumall)<-gsub("Acc", "Accelerometer", names(sumall))
+names(sumall)<-gsub("Gyro", "Gyroscope", names(sumall))
+
+write.table(sumall, file="./GetandCleanData/project/run_analysis.txt", 
+            row.names = FALSE, sep="," )
 
