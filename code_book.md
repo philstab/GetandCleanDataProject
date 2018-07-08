@@ -2,7 +2,7 @@
 
 > Major portions of this code book came from documentation of the original dataset for this project located at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-sumall contains 180 observations and 69 variables. Variables besides the first 3 are tagged with "_mean" to distinguish them from the original variables of the source data set in the link above, as they have been summarized. This is a summarized subset of the data from the original source
+sumall contains 180 observations and 69 variables. Variables besides the first 3 are tagged with "_mean" to distinguish them from the original variables of the source data set in the link above, as they have been summarized. This is a summarized subset of the data from the original source. The variables in question are of units: 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz
 
 ### Notes 
 * Features (variables) are normalized and bounded within [-1,1] 

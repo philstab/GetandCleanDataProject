@@ -32,4 +32,5 @@ Criteria 5 was satisfied by using `group_by()` on subject and activity variables
 
 The final step before reading out the data was to slightly expand some of the column descriptors using `gsub()` to futher satisfy criteria 4. 
 
-The output of the `write.table()` is a tidy data set in wide format, with each row being a (summarized) observation and each column being a unqiue and atomic variable. The first 3 columns are the subject, the activity code, and the text description of the activity and the next 66 variables are the summaries of the variables specificed in criteria 2. See section 2.3 of this paper by Wickham for the definition of tidy data https://vita.had.co.nz/papers/tidy-data.pdf
+## A note on my tidy data
+The output of the `write.table()` is a tidy data set in wide format, with each row being a (summarized) observation and each column being a unqiue and atomic variable. The first 3 columns are the subject, the activity code, and the text description of the activity and the next 66 variables are the summaries of the variables specificed in criteria 2. See **section 2.3** of this paper by Wickham for the definition of tidy data https://vita.had.co.nz/papers/tidy-data.pdf
