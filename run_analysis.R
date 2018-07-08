@@ -45,12 +45,40 @@ unique(test_subject)
 unique(train_subject)
 
 #add selection variable and re-order
-testdf <- testdf %>% mutate(selection = "test") %>% select (test_subject, selection, test_activity, everything())
-traindf <- traindf %>% mutate(selection = "train") %>% select (train_subject, selection, train_activity, everything())
+testdf <- testdf %>% mutate(selection = "test") %>% 
+          select (test_subject, selection, test_activity, everything())
+traindf <- traindf %>% mutate(selection = "train") %>% 
+          select (train_subject, selection, train_activity, everything())
 #rename in-common vars
 testdf <- testdf %>% rename(subject = test_subject, activity = test_activity)
 traindf <- traindf %>% rename(subject = train_subject, activity = train_activity)
 
 #stackem
 all <- as_tibble(rbind(testdf, traindf))
+
+#find and select mean and std dev columns
+
+grep("mean", colnames(all))
+colnames(all)[grep("mean", colnames(all))]
+sum(grepl("mean", colnames(all)))
+
+grep("mean\\()", colnames(all))
+colnames(all)[grep("mean\\()", colnames(all))]
+sum(grepl("mean\\()", colnames(all)))
+
+grep("std", colnames(all))
+colnames(all)[grep("std", colnames(all))]
+sum(grepl("std", colnames(all)))
+
+all <- all %>% select(subject, selection, activity, colnames(all)[grep("mean\\()", 
+                      colnames(all))], colnames(all)[grep("std", colnames(all))]  )
+
+#add activity labels column
+
+actlabel <- read_fwf("./GetandCleanData/project/UCI HAR Dataset/activity_labels.txt",
+                     fwf_empty("./GetandCleanData/project/UCI HAR Dataset/activity_labels.txt", 
+                     col_names = c("activity", "activityDescription")))
+
+all <- left_join(all, actlabel, by = "activity") %>% 
+       select(subject, selection, activity, activityDescription, everything())
 
