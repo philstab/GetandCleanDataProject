@@ -3,8 +3,9 @@ library(lubridate)
 
 dataurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
-download.file(dataurl, "./GetandCleanData/project/HARDataset.zip")
-downloaddate <- Sys.time()
+
+#download.file(dataurl, "./GetandCleanData/project/HARDataset.zip")
+#downloaddate <- Sys.time()
 
 #read in features and drop row numbering
 features <- read_fwf("./GetandCleanData/project/UCI HAR Dataset/features.txt",
