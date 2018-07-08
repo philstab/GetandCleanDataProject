@@ -5,15 +5,15 @@
 sumall contains 180 observations and 69 variables. Variables besides the first 3 are tagged with "_mean" to distinguish them from the original variables of the source data set in the link above, as they have been summarized. This is a summarized subset of the data from the original source
 
 ### Notes 
--Features are normalized and bounded within [-1,1].
--Subjects number 1-30
--6 activities with values and text
-	1 WALKING
-	2 WALKING_UPSTAIRS
-	3 WALKING_DOWNSTAIRS
-	4 SITTING
-	5 STANDING
-	6 LAYING
+* Features (variables) are normalized and bounded within [-1,1] 
+* Subjects number 1-30
+* 6 activities with values and text
+	* 1 WALKING
+	* 2 WALKING_UPSTAIRS
+	* 3 WALKING_DOWNSTAIRS
+	* 4 SITTING
+	* 5 STANDING
+	* 6 LAYING
 
 
 ### Listing and Types
