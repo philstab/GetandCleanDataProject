@@ -95,6 +95,6 @@ names(sumall)<-gsub("^f", "frequency", names(sumall))
 names(sumall)<-gsub("Acc", "Accelerometer", names(sumall))
 names(sumall)<-gsub("Gyro", "Gyroscope", names(sumall))
 
-write.table(sumall, file="./GetandCleanData/project/run_analysis.txt", 
+write.table(sumall, file="./GetandCleanData/project/sumall.txt", 
             row.names = FALSE, sep="," )
 
