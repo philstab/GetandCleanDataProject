@@ -19,6 +19,7 @@ sumall contains 180 observations and 69 variables. Variables besides the first 3
 ### Listing and Types
 
 **Variable Name**                                  **Type**
+
 subject                                          : int  
 activity                                         : int  
 activityDescription                              : chr  
